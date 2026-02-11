@@ -1,0 +1,68 @@
+.game-ui-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  /* Corregido aquí: */
+  justify-content: space-between; 
+  padding: 30px;
+  box-sizing: border-box;
+  z-index: 20;
+  font-family: sans-serif;
+}
+
+/* Contenedor de dinero arriba a la derecha */
+.stats-panel {
+  align-self: flex-end;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 25px;
+  border-radius: 15px;
+  border: 2px solid #b8e667;
+  color: white;
+  pointer-events: auto;
+}
+
+.player-money {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.money-value {
+  color: #b8e667;
+}
+
+/* Botón inferior central */
+.action-panel {
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.btn-roll {
+  background: #b8e667;
+  color: #000;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  border-radius: 50px;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 6px 0px #86a84c;
+  transition: all 0.1s;
+}
+
+.btn-roll:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0px #86a84c;
+}
+
+.btn-roll:hover {
+  background: #c9f57a;
+}

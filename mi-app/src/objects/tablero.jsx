@@ -7,7 +7,7 @@ export default function Tablero() {
 
   return (
     <mesh position={[0, 0.6, 0]}> {/* Un poco más alto que el tablero de la mesa */}
-      <boxGeometry args={[1.5, 0.05, 1]} />
+      <boxGeometry args={[6, 0.05,4]} />
       <meshStandardMaterial map={texture} />
     </mesh>
   )

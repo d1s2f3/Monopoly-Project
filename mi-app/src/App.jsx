@@ -8,7 +8,7 @@ import CamaraInicio from './camaras/camaraInicio' // <--- Importación
 import CamaraJuego1 from './camaras/camaraJuego1' // <--- Importación
 import './index.css' // Asegúrate de que el CSS esté importado
 import './App.css' // Asegúrate de que el CSS esté importado
-import MainMenu from './menu/mainMenu'
+import MainMenu from './main/menu/mainMenu'
 import GameMaster from './gameMaster'
 
 function App() {

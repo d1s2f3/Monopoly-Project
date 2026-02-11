@@ -6,11 +6,11 @@ export default function CamaraJuego1() {
     
 
     // Aplicamos la posición a la cámara
-    state.camera.position.set(0, 4, 6)
+    state.camera.position.set(0, 4, 6.5)
 
     // Obligamos a la cámara a mirar al centro de la mesa
     // El centro está en y=0.5 aproximadamente
-    state.camera.lookAt(0, 0.5, 0)
+    state.camera.lookAt(0, 0, 0)
     
     // Actualizamos la matriz de la cámara para que el cambio sea efectivo
     state.camera.updateProjectionMatrix()

@@ -1,6 +1,6 @@
 import React from 'react';
 import './mainMenu.css';
-import GameMaster from '../../gameMaster'
+import GameMaster from '../gameMaster'
 
 export default function MainMenu({ onStart }) {
   return (

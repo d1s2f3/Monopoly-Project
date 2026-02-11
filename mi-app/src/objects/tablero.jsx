@@ -1,14 +1,34 @@
-import React from 'react'
-import { useTexture } from '@react-three/drei'
+import React, { useMemo } from 'react';
+import Casilla from './casilla';
+import { getBoardCoordinates } from '../logic/boardCoordinates';
+// Importamos los colores Y AHORA TAMBIÉN LAS ETIQUETAS
+import { boardColors, boardLabels } from '../logic/boardColors';
 
-export default function Tablero() {
-  // Carga la textura desde la carpeta public (asegúrate de que wood.jpg esté ahí)
-  const texture = useTexture('/wood.jpg')
+export default function Tablero(props) {
+
+  const casillasData = useMemo(() => {
+    const coords = getBoardCoordinates();
+
+    return coords.map((c) => ({
+      ...c,
+      color: boardColors[c.id],
+      // Añadimos la propiedad 'texto'. Si no existe en el mapa, será undefined.
+      texto: boardLabels[c.id]
+    }));
+  }, []);
 
   return (
-    <mesh position={[0, 0.6, 0]}> {/* Un poco más alto que el tablero de la mesa */}
-      <boxGeometry args={[6, 0.05,6]} />
-      <meshStandardMaterial map={texture} />
-    </mesh>
-  )
+    <group {...props}>
+      {casillasData.map((c) => (
+        <Casilla
+          key={c.id}
+          index={c.id}
+          position={c.position}
+          color={c.color}
+          // Pasamos la nueva prop al componente hijo
+          texto={c.texto}
+        />
+      ))}
+    </group>
+  );
 }

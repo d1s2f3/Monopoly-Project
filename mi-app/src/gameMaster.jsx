@@ -21,7 +21,7 @@ export default function GameMaster() {
                 console.log(`El dado se ha detenido en el número ${n}`);
                 setResultado(n);
             }} 
-/>
+        />
     </group>
   
   

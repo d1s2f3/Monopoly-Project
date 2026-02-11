@@ -1,0 +1,23 @@
+/* Esto resetea el navegador por completo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Forzamos a que el contenedor raíz no deje escapar nada */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* ¡Adiós al scroll! */
+  background-color: #000; /* Fondo negro para que no haya destellos blancos */
+}
+
+/* El contenedor del Canvas debe ser un clon del tamaño de la pantalla */
+.canvas-container {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}

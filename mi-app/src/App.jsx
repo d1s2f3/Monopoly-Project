@@ -4,10 +4,12 @@ import { ContactShadows } from '@react-three/drei'
 import Habitacion from './objects/habitacion'
 import Mesa from './objects/mesa3d'
 import CamaraInicio from './camaras/camaraInicio' // <--- Importación
+import './index.css' // Asegúrate de que el CSS esté importado
+import './App.css' // Asegúrate de que el CSS esté importado
 
 function App() {
   return (
-    <div style={{ width: '100vw', height: '100vh', background: '#000' }}>
+    <div className="canvas-container">
       <Canvas camera={{ fov: 45 }}>
         {/* Luces */}
         <ambientLight intensity={4} />

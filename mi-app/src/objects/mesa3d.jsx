@@ -8,6 +8,7 @@ import { useTexture } from '@react-three/drei'
 
 export default function Mesa({ position = [0, 0, 0] }) {
   const texture = useTexture('/marble.jpg')
+  const texturewood = useTexture('/wood.jpg')
   return (
     <group position={position}>
       {/* Estructura principal de la mesa */}
@@ -17,10 +18,10 @@ export default function Mesa({ position = [0, 0, 0] }) {
       </mesh>
 
       {/* Patas (posiciones relativas al grupo de la mesa) */}
-      <mesh position={[1.3, 0, 0.8]}><boxGeometry args={[0.1, 1, 0.1]} /><meshStandardMaterial color="#3d2b1f" /></mesh>
-      <mesh position={[-1.3, 0, 0.8]}><boxGeometry args={[0.1, 1, 0.1]} /><meshStandardMaterial color="#3d2b1f" /></mesh>
-      <mesh position={[1.3, 0, -0.8]}><boxGeometry args={[0.1, 1, 0.1]} /><meshStandardMaterial color="#3d2b1f" /></mesh>
-      <mesh position={[-1.3, 0, -0.8]}><boxGeometry args={[0.1, 1, 0.1]} /><meshStandardMaterial color="#3d2b1f" /></mesh>
+      <mesh position={[1.3, 0, 0.8]}><boxGeometry args={[0.1, 1, 0.1]} /><meshStandardMaterial map = {texturewood} /></mesh>
+      <mesh position={[-1.3, 0, 0.8]}><boxGeometry args={[0.1, 1, 0.1]} /><meshStandardMaterial map = {texturewood} /></mesh>
+      <mesh position={[1.3, 0, -0.8]}><boxGeometry args={[0.1, 1, 0.1]} /><meshStandardMaterial map = {texturewood} /></mesh>
+      <mesh position={[-1.3, 0, -0.8]}><boxGeometry args={[0.1, 1, 0.1]} /><meshStandardMaterial map = {texturewood}/></mesh>
       
       {/* La Mesa decide poner el Tablero sobre su superficie (y=0.5 + grosor) */}
       <Tablero />

@@ -40,7 +40,12 @@ export default function GameMaster() {
             alTerminar={(n) => {
                 console.log(`El dado se ha detenido en el número ${n}`);
                 setResultado(n);
+<<<<<<< HEAD
             }} />}
+=======
+            }} 
+        />
+>>>>>>> 804c016f4e85708b4782e974e112b3a6aa376c53
     </group>
   
   

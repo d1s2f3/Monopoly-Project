@@ -1,26 +1,33 @@
-
 import React from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, ContactShadows, Environment } from '@react-three/drei'
+import { ContactShadows } from '@react-three/drei'
 import Habitacion from './objects/habitacion'
 import Mesa from './objects/mesa3d'
+import CamaraInicio from './camaras/camaraInicio' // <--- Importación
 
 function App() {
   return (
-    <div style={{ width: '100vw', height: '100vh', background: '#111' }}>
-      <Canvas camera={{ position: [5, 5, 10], fov: 45 }}>
+    <div style={{ width: '100vw', height: '100vh', background: '#000' }}>
+      <Canvas camera={{ fov: 45 }}>
+        {/* Luces */}
         <ambientLight intensity={4} />
-        <pointLight position={[0, 8, 0]} intensity={3} />
-        <pointLight position={[10, 8, 10]} intensity={3} />
+        <pointLight position={[0, 8, 0]} intensity={1.5} castShadow />
         
+        {/* Escena */}
         <Habitacion />
-        
-        {/* Podemos colocar la mesa donde queramos en la habitación */}
         <Mesa position={[0, 0, 0]} />
         
+        {/* Lógica de Cámara Animada */}
+        <CamaraInicio />
 
-        <OrbitControls />
-        <ContactShadows opacity={0.4} scale={20} blur={2} far={4.5} />
+        {/* Sombras proyectadas en el suelo */}
+        <ContactShadows 
+          position={[0, -0.49, 0]} 
+          opacity={0.4} 
+          scale={20} 
+          blur={2.5} 
+          far={4} 
+        />
       </Canvas>
     </div>
   )

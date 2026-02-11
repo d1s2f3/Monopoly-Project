@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Tablero from '../tablero'
+import Tablero from './tablero'
 
 export default function Mesa({ position = [0, 0, 0] }) {
   return (

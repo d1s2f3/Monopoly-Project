@@ -9,12 +9,12 @@ export function TiraDados({ numeroDeseado, alTerminar }) {
   
   // Mapeo de caras a rotaciones finales
   const rotacionesCaras = {
-    1: [0, 0, 0],
-    2: [Math.PI / 2, 0, 0],
-    3: [0, -Math.PI / 2, 0],
-    4: [0, Math.PI / 2, 0],
-    5: [-Math.PI / 2, 0, 0],
-    6: [Math.PI, 0, 0],
+    1: [0, 0, Math.PI / 2],      // El 2 es -X, rotamos en Z para subirlo 
+    2: [0, 0, -Math.PI / 2],     // El 1 es +X, rotamos en Z inverso
+    3: [0, 0, 0],                // El 3 es +Y, ya está arriba
+    4: [Math.PI, 0, 0],         // El 4 es -Y, giro de 180° para subirlo  
+    5: [-Math.PI / 2, 0, 0],     // El 5 es +Z, rotamos en X
+    6: [Math.PI / 2, 0, 0],
   };
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export function TiraDados({ numeroDeseado, alTerminar }) {
     const timer = setTimeout(() => {
       setLanzando(false);
       if (alTerminar) alTerminar(numeroDeseado);
-    }, 1500);
+    }, 500);
     return () => clearTimeout(timer);
   }, [numeroDeseado]);
 
